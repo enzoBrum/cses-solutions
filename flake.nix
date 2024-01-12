@@ -14,11 +14,7 @@
             gcc
             clang-tools
             lldb
-            python311
-
-            # dependency for kattis-cli
-            python311Packages.requests 
-            python311Packages.lxml
+            gdb
           ];
         };
       });
