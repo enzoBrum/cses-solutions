@@ -122,7 +122,7 @@ int main() {
     
     int i_chosen;
     ll v_chosen;
-    if(uf.find_set(il) != uf.find_set(ia) && (vl < vr || uf.find_set(ir) == uf.find_set(ia))) {
+    if(il != -1 && (ir == -1 || (vl < vr && uf.find_set(il) != uf.find_set(ia)) || (vr > vl && uf.find_set(ia) == uf.find_set(ir)))) {
       i_chosen = il;
       v_chosen = vl;
     }
@@ -132,7 +132,7 @@ int main() {
     }
     
     st.erase(it);
-    st.erase({i_chosen, v_chosen});
+    st.erase({v_chosen, i_chosen});
     idx.erase(idx_it);
     idx.erase(i_chosen);
     
